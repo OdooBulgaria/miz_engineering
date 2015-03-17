@@ -31,7 +31,7 @@ MIZ Engineering
     'author': 'Intellerist',
     'website': 'https:www.intellerist.com',
     'images': [],
-    'depends': ['sale','purchase','base','web','crm'],
+    'depends': ['sale','purchase','base','web'],
     'data': ['sale_view.xml','purchase_view.xml','views/menu.xml','views/list_view.xml','product_view.xml',
     'views/confirm_template.xml',"crm_lead_view.xml",
     ],
