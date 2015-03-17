@@ -1,0 +1,77 @@
+<t name="Contact us" t-name="website.contactus">
+  <t t-call="website.layout">
+    <div id="wrap">
+      <div class="oe_structure"/>
+      <div class="container">
+        <h1>Contact us</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="oe_structure">
+              <div style="padding:0 0 0 15px; margin:0; bgcolor: #747474;">
+                <body bgcolor="#E6E6FA">
+                <h1>Send us an email</h1>
+                <form action="/get_param" method="post">
+               <!-- Name -: <input name="name" type="text"/>
+                Occupation -: <input name="occ" type="text"/>
+                <input type="submit"/><br/>-->
+                <table>
+                    <tr>
+                       <td width="250" class="formtext"> Name</td>
+                        <td width="250" class="formtext">Company</td>
+                    </tr>
+                    <tr>
+                        <td height="25" class="head_search1" style="width:250px;"><span class="wpcf7-form-control-wrap name"><input type="text" name="name" value="" class="wpcf7-text wpcf7-validates-as-required txt" size="35" /></span></td>
+                        <td class="head_search1" style="width:250px;"><span class="wpcf7-form-control-wrap company"><input type="text" name="company" value="" class="wpcf7-text wpcf7-validates-as-required txt" size="35" /></span></td>
+                    </tr>
+                    <tr>
+                    <td>Email</td>
+                    <td>Department</td>    
+                    </tr>
+                   <tr>
+                        <td height="25" class="head_search1" style="width:250px;"><span class="wpcf7-form-control-wrap email"><input type="text" name="email" value="" class="wpcf7-text wpcf7-validates-as-required txt" size="35" /></span></td>
+                        <td class="head_search1" style="width:250px;"><span class="wpcf7-form-control-wrap department"><input type="text" name="department" value="" class="wpcf7-text wpcf7-validates-as-required txt" size="35" /></span></td>
+                    </tr>
+                    <tr>
+                        <td width="340" class="formtext">Phone</td>
+                        <td width="362" class="formtext">Where did you hear about us</td>
+                    </tr>
+                        <tr>
+                            <td height="25" class="head_search1" style="width:250px;"><span class="wpcf7-form-control-wrap phone"><input type="text" name="phone" value="" class="wpcf7-text wpcf7-validates-as-required txt" size="35" /></span></td>
+                            <td class="head_search1" style="width:250px;"><span class="wpcf7-form-control-wrap here"><select name="here" class="wpcf7-select wpcf7-validates-as-required newselect"><option value="Google">Google</option><option value="Friend">Friend</option><option value="Newspaper">Newspaper</option></select></span></td>
+                    </tr>
+                    <tr>
+                         <td colspan="2" class="formtext">Your Comment</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span class="wpcf7-form-control-wrap Comment"><textarea name="Comment" class="text" cols="76" rows="10"></textarea></span></td>
+                    </tr>
+                </table>
+                    <input type="submit"/><br/>   
+                </form>
+                </body>
+              </div>
+              <section class="oe_dark mt16 mb16">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12"/>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="text-center mt64" name="mail_button">
+              <a t-attf-href="mailto:{{ res_company.email }}" class="btn btn-primary">Send us an email</a>
+            </div>
+          </div>
+          <div class="col-md-4 mb32">
+            <div groups="base.group_website_publisher" t-ignore="true" class="pull-right css_editable_mode_hidden" t-att-style="style or ''">
+              <a class="btn btm-sm btn-default" t-att-href="'/web#return_label=Website&amp;model=%s&amp;id=%s' % (res_company._name, res_company.id)">Change address</a>
+            </div>
+            <t t-call="website.company_description"/>
+          </div>
+        </div>
+      </div>
+      <div class="oe_structure"/>
+    </div>
+  </t>
+</t>
+

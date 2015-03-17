@@ -1,0 +1,9 @@
+<openerp>
+	<data>
+	    <template id="miz_engineering_assets_backend" name="miz_engineering assets" inherit_id="web.assets_backend">
+	        <xpath expr="." position="inside">
+	            <script type="text/javascript" src="/miz_engineering/static/src/js/list_view.js"></script>
+	        </xpath>
+	    </template>
+	</data>
+</openerp>

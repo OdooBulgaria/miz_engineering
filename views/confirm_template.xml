@@ -1,0 +1,12 @@
+<openerp>
+	<data>
+		<template id="confirm_page" name="Simple Page">
+		    <t t-call="website.layout">
+		        <div class="container">
+		            <span>Thankyou for submiting your qquery. We will get back to you shortly</span>
+		        </div>
+		        <div class="oe_structure" />
+		    </t>
+		</template>		
+	</data>
+</openerp>

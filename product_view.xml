@@ -1,0 +1,66 @@
+<openerp>
+	<data>
+       
+        <record id="view_product_supplier_info" model="ir.ui.view">
+            <field name="name">product supplier info</field>
+            <field name="model">product.supplierinfo</field>
+			<field name="inherit_id" ref="product.product_supplierinfo_form_view"/>            
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<xpath expr = "/form/group/field[@name='delay']" position ='after'>
+            		<field name = 'last_transaction_price'/>
+            	</xpath>
+            </field>
+       </record>
+
+        <record id="view_partner_simple_form_one2many" model="ir.ui.view">
+            <field name="name">res.partner.simplified.form</field>
+            <field name="model">res.partner</field>
+            <field name ="priority">10000</field>
+            <field name="arch" type="xml">
+            	<form string = "Partner View">
+            		<sheet>
+            			<notebook>
+            				<page string = "Sale Order Lines">
+								<field name = "sale_order_line_ids"/>            				
+            				</page>
+            				<page string = "Invoice Lines">
+								<field name = "invoice_lines" />            				
+            				</page>            				
+            			</notebook>
+            		</sheet>
+            	</form>
+            </field>
+		</record>
+		
+	   	<record id="view_edit_product_templates" model="ir.ui.view">
+            <field name="name">Edit Product Template </field>
+            <field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_form_view"/>
+			<field name="type">form</field>
+            <field name="arch" type="xml">
+            	<xpath expr = "/form/sheet/notebook/page[@string='Inventory']" position="after">
+            		<page string="Customers">
+            			<field name="customer_id" widget="one2many_list" context="{'miz_engineering':True,'product_id':active_id}">
+            				<tree string = "Sale Order Lines" >
+            					<field name = "name"/>
+            				</tree>
+            			</field>
+            		</page>
+            	</xpath>
+            </field>
+        </record>
+        
+	   	<record id="view_edit_product_tree_image" model="ir.ui.view">
+            <field name="name">add.product.image </field>
+            <field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_tree_view"/>
+			<field name="type">form</field>
+            <field name="arch" type="xml">
+            	<xpath expr = "/tree/field[@name='name']" position="after">
+            		<field name="image_small" string="Product Image"/>
+            	</xpath>
+            </field>
+        </record>        
+	</data>
+</openerp>
